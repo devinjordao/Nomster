@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :places do
     resources :comments, only: :create
   end
-  resources :places
-  post 'photos', to: 'photos#create'
+  resources :places do
+    resources :photos, only: :create
+  end
   resources :users, only: :show
 end
