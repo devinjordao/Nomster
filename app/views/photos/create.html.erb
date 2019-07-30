@@ -1,2 +1,6 @@
-<h1>Photos#create</h1>
-<p>Find me in app/views/photos/create.html.erb</p>
+<h1>Photos</h1>
+<% @place.photos.each do |photo| %>
+  <%= photo.caption %>
+  <%= image_tag photo.picture_url.to_s, class:"image_preview" %>
+<% end %>
+
